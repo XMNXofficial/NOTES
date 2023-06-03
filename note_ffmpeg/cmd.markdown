@@ -17,3 +17,7 @@ ffmpeg -decoders | grep cuvid 列出支持cuda加速的编码器
 ```
 ffmpeg -hwaccel cuda -i pp.mp4 -i 1.ogg -filter_complex "[0:a]aformat=fltp:44100:stereo[0a];[1:a]aformat=fltp:44100:stereo[a1];[0a][a1]amerge=inputs=2[a]"  -c:v copy -map 0:v:0 -map "[a]" pp2.mp4 -y
 ```
+## 添加音轨
+```
+ffmpeg -hwaccel cuda -i pp.mp4 -i 1.ogg -map 0:v:0 -map 0:a:0 -map 1:a:0 -c:v copy ppyg.mp4
+```
