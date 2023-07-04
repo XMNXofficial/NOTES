@@ -32,6 +32,13 @@ file(GLOB_RECURSE  CPP_SOURCES "*.cpp")
 - `EXISTS`: 判断指定文件或目录是否存在，并将结果存储在变量中。
 - `SIZE`: 获取指定文件的大小，并将结果存储在变量中。
 
+### 获取文件名/拓展名/目录
+```cmake
+    get_filename_component(<接收文件名用的变量> <全路径> NAME_WE) #文件名
+    get_filename_component(<接收拓展名用的变量> <全路径> EXT) #拓展名
+    get_filename_component(<接收目录用的变量> <全路径> DIRECTORY) #目录
+```
+
 ## 循环
 ### foreach命令(for循环)
 ```cmake
@@ -40,4 +47,11 @@ foreach(<每次循环的变量名> <列表(类似迭代器)>) #开始循环
 循环执行的命令2()
 循环执行的命令3()
 endforeach() #结束循环
+```
+
+## 测试命令
+### message命令
+相当于打印
+```cmake
+message("你好")
 ```
